@@ -8,6 +8,9 @@ driver = webdriver.Firefox()  # Или используйте другой др�
 # Заходим на сайт
 driver.get("https://pegas.bsu.edu.ru/mod/quiz/view.php?id=1666675")
 
+# Добавляем cookies
+driver.add_cookie({'name': 'MoodleSession', 'value': 'j4ehlduh8l8tf4tnb3316f1e5p'})
+
 # Находим кнопку и кликаем по ней
 button = driver.find_element_by_id("single_button65a587bb5919d18")
 button.click()
@@ -46,4 +49,4 @@ with open('answers.json', 'w') as f:
     json.dump(previous_answers, f)
 
 # Закрываем браузер после использования
-driver.close()
+# driver.close()
